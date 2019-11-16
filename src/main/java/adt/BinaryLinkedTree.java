@@ -161,8 +161,8 @@ public class BinaryLinkedTree<T extends Comparable<T>> implements BinaryTree<T> 
      * @return liefert true, falls das Element gelöscht werden konnte.
      */
     public boolean delete(T element) {
-        BinaryTreeNode parent = root, node = root, child = null, temp = null;
-
+        BinaryTreeNode parent = root, node = root, child, temp;
+        //zu löschenden Knoten suchen
         while (node != null) {
             int cmp = node.compareTo(element);
             if (cmp == 0)
@@ -173,17 +173,20 @@ public class BinaryLinkedTree<T extends Comparable<T>> implements BinaryTree<T> 
             }
         }
 
-        //noinspection ConstantConditions
+        //kein Koten gefunden
         if (node == null) return false;
 
+        //Fall 1
         if (node.getRightChild() == null && node.getLeftChild() == null) { // Es ist ein Blatt
             child = null;
 
+        //Fall 2
         } else if (node.getLeftChild() == null) {
             child = node.getRightChild();
         } else if (node.getRightChild() == null) {
             child = node.getLeftChild();
-        } else {
+        } else { //Fall 3
+            //minimales Element suchen
             child = node.getRightChild();
             temp = node;
 

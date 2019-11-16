@@ -127,6 +127,11 @@ class BinaryLinkedTreeTest {
     }
 
     @Test
+    void deleteElement0() {
+        assertFalse(tree.delete(0));
+    }
+
+    @Test
     void size() {
         assertEquals(7, tree.size());
     }

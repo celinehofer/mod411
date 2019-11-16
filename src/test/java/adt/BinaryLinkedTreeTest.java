@@ -104,9 +104,26 @@ class BinaryLinkedTreeTest {
 
     @Test
     void deleteElement5() {
+        //assertTrue(tree.delete(5);
         tree.delete(5);
         tree.inOrder(BinaryLinkedTree.outputMethod);
         assertEquals("1 3 6 7 9 10 ", outContent.toString());
+    }
+
+    @Test
+    void deleteElement1() {
+        //assertTrue(tree.delete(5);
+        tree.delete(1);
+        tree.inOrder(BinaryLinkedTree.outputMethod);
+        assertEquals("3 5 6 7 9 10 ", outContent.toString());
+    }
+
+    @Test
+    void deleteElement9() {
+        //assertTrue(tree.delete(5);
+        tree.delete(9);
+        tree.inOrder(BinaryLinkedTree.outputMethod);
+        assertEquals("1 3 5 6 7 10 ", outContent.toString());
     }
 
     @Test

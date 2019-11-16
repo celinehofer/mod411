@@ -103,6 +103,13 @@ class BinaryLinkedTreeTest {
     }
 
     @Test
+    void deleteElement5() {
+        tree.delete(5);
+        tree.inOrder(BinaryLinkedTree.outputMethod);
+        assertEquals("1 3 6 7 9 10 ", outContent.toString());
+    }
+
+    @Test
     void size() {
         assertEquals(7, tree.size());
     }
